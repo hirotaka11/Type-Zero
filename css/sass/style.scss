@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+@import "compass";
+
+@include global-reset;
+
+@import "config";
+@import "mixin";
+@import "common";
+
+// Retina flg
+// $retina: false;
+@import "menu";
+
+@import "layout";
+
+// @media screen and (-webkit-min-device-pixel-ratio:2),
+//                   (min-resolution: 2dppx){
+//   $retina: true;
+//   @import "menu";
+// }

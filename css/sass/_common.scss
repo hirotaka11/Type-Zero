@@ -1,0 +1,547 @@
+$mainWidth: 320px;
+$mainTextColor: #333;
+$mainLinkColor: #15c;
+$mainFontSize: 13px;
+
+$mainBgColor: #ccc;
+$mainBgColor2: #eee;
+$mainBgColor3: #fff;
+
+$baseBtnBg01: #499bea;
+$baseBtnBg02: #207ce5;
+$baseBtnBg01_l: lighten($baseBtnBg01, 10%);
+$baseBtnBg02_l: lighten($baseBtnBg02, 10%);
+
+$primaryBtnBg01:#ffa84c;
+$primaryBtnBg02:#ff7b0d;
+
+$tabBg01_sel: #fff;
+$tabBg02_sel: #eee;
+$tabBg01: #499bea;
+$tabBg02: #207ce5;
+
+$listBgColor: #fff;
+$listListBg01: #ccc;
+$listListBg02: #333;
+$listListBg03: #999;
+$listListBg01_l: lighten($listListBg01, 10%);
+$listListBg02_l: lighten($listListBg02, 10%);
+$listListBg03_l: lighten($listListBg03, 10%);
+
+$highlightColor: transparent;
+
+*:not(input) {
+  -webkit-touch-callout: none;
+}
+
+input[type=text] {
+  -webkit-user-select: auto;
+}
+
+html,body {
+  width: 100%;
+}
+
+body {
+  background-color: black;
+  word-break:break-all;
+  font-family: Helvetica, Arial, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'モリサワ 新ゴ R', 'Droid Sans', メイリオ, 'sans-serif';
+  color: $mainTextColor;
+  line-height: 1.6;
+  font-weight: bold;
+  font-size: $mainFontSize;
+}
+
+p { line-height: 1.5;}
+
+a { color: $mainLinkColor; }
+
+input[type="submit"], a {
+  -webkit-tap-highlight-color: $highlightColor;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border:none;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  @include hline;
+}
+
+.clearfix { @include clearfix; }
+
+.m0 {margin: 0; }
+.m3 { margin: 3px; }
+.m5 { margin: 5px; }
+.m10 { margin: 10px; }
+.mt5 { margin-top: 5px; }
+.mt10 { margin-top:10px; }
+.mt20 { margin-top:20px; }
+.mb5 { margin-bottom: 5px; }
+.mb10 { margin-bottom:10px; }
+.mb20 { margin-bottom:20px; }
+.mr5 { margin-right: 5px; }
+.mr10 { margin-right:10px; }
+.ml5 { margin-left: 5px; }
+.ml10 { margin-left:10px; }
+.mh5 { margin: 0 5px;}
+.mh10 { margin: 0 10px; }
+.mv5 { margin: 5px 0; }
+.mv10 { margin: 10px 0; }
+
+.p0 { padding: 0; }
+.p3 { padding: 3px }
+.p5 { padding: 5px; }
+.p10 { padding: 10px; }
+.pt5 { padding-top: 5px; }
+.pb5 { padding-bottom: 5px; }
+.pt10 {padding-top: 10px; }
+.pb10 {padding-bottom: 10px; }
+.pl5 {padding-left: 5px;}
+.pl10 {padding-left: 10px;}
+.ph5 { padding: 0 5px; }
+.ph10 { padding: 0 10px; }
+.pv5 { padding: 5px 0; }
+.pv10 { padding: 10px 0; }
+.pv20 { padding: 20px 0; }
+
+.lh2  {line-height: 2;}
+.lh25 {line-height: 2.5;}
+.lh3 {line-height: 3;}
+
+.white { color: #fff; }
+.gray { color: darken($mainTextColor,20%); }
+.red { color: red; }
+.yellow { color: #FFFF00; }
+.orange { color: #ffaa00; }
+
+.uline {text-decoration: underline;}
+
+.bg2 { background-color:$mainBgColor2; }
+.bg3 { background-color:$mainBgColor3; }
+
+.floatRight { float: right; }
+.floatLeft { float: left; }
+
+.center { text-align: center;}
+.left { text-align: left;}
+.right {text-align: right;}
+.rem1 { font-size: 1rem; }
+
+.box { @include display-box; }
+.boxStart { @include box-pack(start); }
+.boxCenter { @include box-pack(center); }
+.boxEnd { @include box-pack(end); }
+.justify { @include box-pack(justify); }
+.boxFlex1 { @include box-flex(1); }
+.boxAlignCenter { @include box-align(center); }
+
+.boxAllCenter {
+  @include display-box;
+  @include box-pack(center);
+  @include box-align(center);
+  @include box-orient(vertical);
+}
+
+.posR { position: relative; }
+.posA { position: absolute; }
+
+.spWidth20 { width: 20px; }
+.spWidth60 { width: 60px; }
+.spHeight10 { height: 10px; }
+.spHeight20 { height: 20px; }
+
+// Error Text
+.error {
+  padding:5px;
+  color:#FD0003;
+  background-color:#FEC7DE;
+  text-align:center;
+}
+
+.blink {
+  animation: 1s animate-blink infinite linear;
+  -webkit-animation: 1s animate-blink infinite linear;
+}
+@keyframes 'animate-blink' {
+  0%, 89.9% { opacity: 1 }
+  90%, 100% { opacity: 0 }
+}
+@-webkit-keyframes 'animate-blink' {
+  0%, 89.9% { opacity: 1 }
+  90%, 100% { opacity: 0 }
+}
+
+// Arrow Link
+%symbolLink {
+  display: block;
+  font-size: 0.9rem;
+  color: #eee;
+  text-decoration: none;
+  position: relative;
+  @include background-image( linear-gradient(top, $tabBg01 0%, $tabBg01 3%, $tabBg02 3%, $tabBg01 97%, $tabBg01 100%) );
+
+  &.touchstart,
+  &:hover {
+    @include background-image( linear-gradient(top, lighten($tabBg01, 10%) 0%,  lighten($tabBg01, 10%) 3%, lighten($tabBg02, 10%) 3%, lighten($tabBg01, 10%) 97%, lighten($tabBg01, 10%) 100%));
+  }
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    height: 5px;
+    width: 5px;
+    margin-top: -3px;
+    content: "";
+    @include transform(rotate(45deg));
+  }
+}
+
+// right arrow Link
+.aboutLink,
+.nextLink {
+  @extend %symbolLink;
+  text-align:right;
+  padding: 10px 30px 10px 5px;
+
+  &:after {
+    right:10px;
+    @include transform(rotate(45deg));
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+  }
+}
+
+// left arrow Link
+.backLink {
+  @extend %symbolLink;
+  text-align: left;
+  padding: 10px 5px 10px 30px;
+
+  &:after {
+    left:10px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+  }
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  @include scale(1.8);
+  vertical-align: text-bottom;
+}
+
+input[type="text"] { height: 1.8rem;}
+input[type="text"].textLine { width: 280px;}
+
+input[type="submit"] {
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.blinkBtn {
+  @extend .baseBtn;
+  @extend .primary;
+  width: 150px !important;
+  font-weight: bold;
+}
+
+.tab {
+  @include display-box;
+  font-weight: bold;
+  margin: 5px;
+
+  li {
+    @include box-flex(1);
+    width: 100%;
+    border: 1px solid #fff;
+    position: relative;
+    line-height: 40px;
+    text-align: center;
+    color: #111;
+    font-weight: normal;
+    @include box-align(center);
+    @include box-pack(center);
+    @include box-sizing(border-box);
+    @include background-image( linear-gradient(top, $tabBg01 0%, $tabBg01 3%, $tabBg02 3%, $tabBg01 100%) );
+
+    &.selected {
+      @include background-image( linear-gradient(top, $tabBg01_sel 0%, $tabBg01_sel 3%, $tabBg02_sel 3%, $tabBg01_sel 100%) );
+    }
+
+    a {
+      color: #fff;
+      display: block;
+      width: 100%;
+      text-decoration: none;
+
+      &:hover,
+      &.touchstart {
+        @include background-image( linear-gradient(top, lighten($tabBg01, 10%) 0%,  lighten($tabBg01, 10%) 3%, lighten($tabBg02, 10%) 3%, lighten($tabBg01, 10%) 100%) );
+      }
+    }
+
+    &:first-child {
+      @include border-top-left-radius(10px);
+      @include border-bottom-left-radius(10px);
+      border-right: 1px solid #5794a1;
+
+      a {
+        @include border-top-left-radius(10px);
+        @include border-bottom-left-radius(10px);
+      }
+    }
+
+    &:last-child {
+      @include border-top-right-radius(10px);
+      @include border-bottom-right-radius(10px);
+      border-right: 1px solid #5794a1;
+
+      a {
+        @include border-top-right-radius(10px);
+        @include border-bottom-right-radius(10px);
+      }
+    }
+  }
+}
+
+.paging {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+
+  ul {
+    @include display-box;
+    @include box-pack(justify);
+  }
+
+  li a {
+    text-decoration: underline;
+   }
+}
+
+#topContainer{
+    width: $mainWidth;
+    margin: auto;
+    color: $mainTextColor; 
+    background-color: $mainBgColor;
+    position: relative;
+}
+
+.boxLink {
+  @include border-radius(5px);
+  display: inline-block;
+  padding: 5px;
+  margin: 10px 0;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+}
+
+.baseBtn {
+    @include box-sizing(border-box);
+    @include appearance(none);
+    @include border-radius(5px);
+    @include background-image( linear-gradient(top, $baseBtnBg01 0%, $baseBtnBg02 50%, $baseBtnBg01 100%) );
+    display: block;
+    margin: 5px auto;
+    padding: 8px 10px;
+    border: 1px solid #fff;
+    box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(255,255,255,0.5);
+    color: #ffffff;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.6),
+        0px 1px 0px rgba(255,255,255,0.4);
+    font-size: 0.9rem;
+    width: 150px;
+    cursor: pointer;
+
+    &.w100 {
+      width: 100px;
+    }
+
+    &.w120 {
+      width: 120px;
+    }
+
+    &:hover,
+    &.touchstart {
+        @include background-image( linear-gradient(top, $baseBtnBg01_l 0%, $baseBtnBg02_l 50%, $baseBtnBg01_l 100%) );
+        display: block;
+    }
+
+    &.long { width: 80%; }
+
+    &.left {
+        float: left;
+        margin: 5px 5px 5px 0;
+    }
+
+    &.right {
+        float: right;
+        margin: 0 5px 5px 5px;
+    }
+}
+
+.primary {
+  @include background-image( linear-gradient(top, $primaryBtnBg01 0%, $primaryBtnBg02 50%, $primaryBtnBg01 100%) );
+  padding: 8px 10px;
+
+  div {
+    background:#fff;
+    -webkit-box-shadow: 0 0 6px 6px rgba(255,255,255,1.0);
+    opacity:0.5;
+    -webkit-animation:'efct-pnl' 1s linear;
+    -webkit-animation-iteration-count:infinite;
+  }
+
+  &:hover,
+  &.touchstart {
+      @include background-image( linear-gradient(top, lighten($primaryBtnBg01, 30%) 0%, lighten($primaryBtnBg02, 10%) 50%, lighten($primaryBtnBg01, 30%) 100%) );
+      display: block;
+  }
+}
+
+.efctBtn {
+  @include border-radius(5px);
+  position: absolute;
+  margin: 6px 0;
+  width: 120px;
+  height: 32px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 5px #fff;
+  opacity: 0.6;
+
+  -webkit-animation-name: efctBlur1;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+
+  &.w150 {width: 150px;}
+}
+@-webkit-keyframes efctBlur1 {
+  0% {opacity: 0; -webkit-transform: scale(1.0, 1.0);}
+  50% {opacity: 0.5; }
+  100% {opacity: 0; -webkit-transform: scale(1.0, 1.0);}
+}
+
+
+.selectBox {
+  position: relative;
+  display: inline-block;
+
+  select { min-width: 55px; }
+
+  &:after {
+    position: absolute;
+    right: 15px;
+    top: 40%;
+    content: "";
+    display: block;
+    height: 0px;
+    width: 0px;
+    border: 7px solid transparent;
+    border-top-color: #000;
+    border-bottom-color: transparent;
+  }
+}
+
+@-webkit-keyframes whiteFade {
+    0% {
+      opacity: 0.0;
+      -webkit-transform: scale(1.0, 1.0);
+      background: #fff;
+    }
+    50% {
+      opacity: 0.4;
+      background:#fff;
+    }
+    100% {
+      opacity: 0.0;
+      -webkit-transform: scale(1.1, 1.2);
+      background:#fff;
+    }
+}
+
+select {
+  vertical-align: middle;
+  margin: 5px auto;
+  font-size: 0.9rem;
+  display: inline-block;
+  border: 0px;
+  @include background-image( linear-gradient(top, #fff 0%, #ccc 100%) );
+  box-shadow: inset 0px -1px 3px rgba(0,0,0,0.5), 0px 1px 2px rgba(255,255,255,0.5);
+  @include appearance(none);
+  padding: 0px 30px 0 10px;
+  height: 30px;
+  line-height: 30px;
+  @include border-radius(3px);
+}
+
+.selectSubmit {
+  vertical-align: middle;
+  text-align: center;
+  margin: 5px auto;
+  font-size: 0.9rem;
+  border: 0px;
+  color: #fff;
+  @include background-image( linear-gradient(top, $baseBtnBg01 0%, $baseBtnBg02 50%, $baseBtnBg01 100%) );
+  border: 1px solid #fff;
+  @include appearance(none);
+  padding: 0px 20px 0 20px;
+  height: 30px;
+  line-height: 30px;
+  @include border-radius(3px);
+
+  &:hover,
+  &.touchstart {
+    @include background-image( linear-gradient(top, $baseBtnBg01_l 0%, $baseBtnBg02_l 50%, $baseBtnBg01_l 100%) );
+  }
+}
+
+.listBox {
+  background-color: $listBgColor;
+  text-align: center;
+
+  li {
+    @include background-image( linear-gradient(top, $baseBtnBg01 0%, $baseBtnBg02 90%, $baseBtnBg02 100%) );
+    border-bottom: 1px solid $listBgColor;
+    @include clearfix;
+    padding: 5px;
+    font-size: 0.8rem;
+
+    &:hover,
+    &.touchstart {
+      @include background-image( linear-gradient(top, $baseBtnBg01_l 0%, $baseBtnBg02_l 90%, $baseBtnBg02_l 100%) );
+    }
+
+    .date {
+      float: left;
+      padding: 8px 5px;
+    }
+
+    a {
+      color: $mainLinkColor;
+      display: block;
+      padding: 8px 5px;
+      text-decoration: none;
+      width: 100%;
+      @include box-sizing(border-box);
+    }
+  }
+}
+

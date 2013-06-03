@@ -1,0 +1,27 @@
+// CSSSprite
+// $gMenu: sprite-map("image/layout/menu_x2/*.png",$spacing: 5px);
+  // sprite Menu Max Width
+$sprites-img-menu-size: 320px;
+
+// $sprites-img-menu: sprite-url($gMenu);
+
+/*
+  Global Menu
+*/
+.globalNav {
+  background-color: #79440e;
+
+  ul {
+    @include display-box;
+    @include box-pack(justify);
+
+    li {
+      text-indent: -9999px;
+    }
+  }
+}
+
+#globalHeader ul li:nth-child(5) {
+  @include box-flex(1);
+  @include box-pack(end);
+}
