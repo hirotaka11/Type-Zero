@@ -27,13 +27,5 @@ $(function(){
   $(".touchHover").bind('touchend',function(){
     $(this).removeClass("touchstart");
   });
-
-  $(".flexslider").flexslider({
-      animation: "slide",
-      slideshowSpeed: 3000,
-      controlNav: ".slideArrow",
-      prevText: "",
-      nextText: ""
-  });
 });
 
